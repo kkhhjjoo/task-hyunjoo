@@ -1,4 +1,4 @@
-import TodoItem from '@/app/components/TodoItem/page';
+import TodoItem from '@/app/components/TodoItem';
 import styles from './TodoList.module.css';
 import type { Todo } from '@/lib/store';
 import Image from 'next/image';

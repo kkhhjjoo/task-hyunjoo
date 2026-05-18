@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import Header from '@/app/components/Header/page';
-import Main from '@/app/components/Main/page';
+import Main from '@/app/components/Main';
 import type { Todo } from '@/lib/store';
 
 export default function Home() {

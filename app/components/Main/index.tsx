@@ -1,5 +1,5 @@
-import Search from '@/app/components/Search/page';
-import TodoList from '@/app/components/TodoList/page';
+import Search from '@/app/components/Search';
+import TodoList from '@/app/components/TodoList';
 import type { Todo } from '@/lib/store';
 import styles from './Main.module.css';
 

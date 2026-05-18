@@ -1,0 +1,234 @@
+.page {
+  min-height: 100vh;
+  background: #fff;
+}
+
+.inner {
+  margin: 0 16px;
+  padding: 24px 0 48px;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    margin: 0 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .inner {
+    margin: 0 360px;
+    padding-top: 40px;
+  }
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  font-size: var(--font-size-sm);
+  color: var(--slate-500);
+}
+
+.titleRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  margin-bottom: 24px;
+  background: #fff;
+  border: 1.5px solid var(--slate-200);
+  border-radius: 999px;
+}
+
+.circle {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: default;
+}
+
+.titleInput {
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: 'NanumSquare', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--slate-900);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+@media (min-width: 745px) {
+  .content {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+  }
+}
+
+.imageSection {
+  flex: 1;
+  min-width: 0;
+}
+
+.imageBox {
+  position: relative;
+  width: 100%;
+  height: 311px;
+  /* aspect-ratio: 1; */
+  max-width: 100%;
+  border: 2px dashed var(--slate-300);
+  border-radius: 24px;
+  background: #fff;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+@media (min-width: 745px) {
+  .imageBox {
+    max-width: 380px;
+    height: 311px;
+  }
+}
+
+.imageBox:hover {
+  border-color: var(--slate-400);
+}
+
+.placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.addBtn {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.addBtn:hover {
+  opacity: 0.85;
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.memoSection {
+  flex: 2;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.memoBox {
+  position: relative;
+  width: 100%;
+  min-height: 311px;
+  border-radius: 16px;
+  overflow: hidden;
+  background-image: url('/imgs/memo.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+  .memoBox {
+    min-height: 311px;
+    background-image: url('/imgs/memo@2x.png');
+  }
+}
+
+@media (min-width: 1200px) {
+  .memoBox {
+    background-image: url('/imgs/memo@3x.png');
+  }
+}
+
+.memoLabel {
+  display: block;
+  padding-top: 28px;
+  text-align: center;
+  font-family: 'NanumSquare', sans-serif;
+  font-size: var(--font-size-lg);
+  font-weight: 700;
+  color: var(--amber-800);
+  pointer-events: none;
+}
+
+.memoInput {
+  width: 100%;
+  min-height: 240px;
+  padding: 16px 32px 32px;
+  border: none;
+  outline: none;
+  resize: vertical;
+  background: transparent;
+  font-family: 'NanumSquare', sans-serif;
+  font-size: var(--font-size-md);
+  font-weight: 400;
+  line-height: 32px;
+  color: var(--slate-800);
+  text-align: center;
+}
+
+.memoInput::placeholder {
+  color: var(--slate-400);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.actionBtn {
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.actionBtn:hover:not(:disabled) {
+  opacity: 0.88;
+}
+
+.actionBtn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.actionBtn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}

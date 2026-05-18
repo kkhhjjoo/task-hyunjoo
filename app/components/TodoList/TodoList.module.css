@@ -1,0 +1,17 @@
+.column {
+  flex: 1;
+}
+
+.badge {
+  display: block;
+  margin-bottom: 14px;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

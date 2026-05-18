@@ -1,0 +1,39 @@
+.container {
+  width: 100%;
+  height: 60px;
+  border-bottom: 1px solid var(--slate-200);
+}
+
+.inner {
+  margin: 0 16px;
+  padding: 10px 0;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    margin: 0 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .inner {
+    margin: 0 360px;
+  }
+}
+
+.logo {
+  display: none;
+}
+
+.mobileLogo {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .logo {
+    display: block;
+  }
+  .mobileLogo {
+    display: none;
+  }
+}

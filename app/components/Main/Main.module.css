@@ -1,0 +1,30 @@
+.inner {
+  margin: 0 16px;
+  padding: 24px 0;
+}
+
+@media (min-width: 768px) {
+  .inner {
+    margin: 0 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .inner {
+    margin: 0 360px;
+  }
+}
+
+.columns {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media (min-width: 1200px) {
+  .columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}

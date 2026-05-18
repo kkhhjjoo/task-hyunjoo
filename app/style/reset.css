@@ -1,0 +1,172 @@
+/* 
+ * Ultra Hard Reset
+ * 모든 요소의 모든 스타일 완전 제거
+ */
+
+/* 전체 초기화 */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+/* HTML5 요소 초기화 */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section {
+  display: block;
+}
+
+/* Body 완전 초기화 */
+body {
+  line-height: 1;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* 리스트 완전 제거 */
+ol,
+ul,
+li {
+  list-style: none;
+  list-style-type: none;
+}
+
+/* 인용문 스타일 제거 */
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+/* 테이블 초기화 */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+th,
+td {
+  padding: 0;
+  text-align: left;
+  font-weight: normal;
+}
+
+/* 폼 요소 완전 초기화 */
+input,
+textarea,
+select,
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+  background: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+button {
+  cursor: default;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+/* 링크 스타일 제거 */
+a {
+  text-decoration: none;
+  color: inherit;
+  background: transparent;
+}
+
+/* 이미지 초기화 */
+img {
+  border: 0;
+  vertical-align: baseline;
+}
+
+/* 강조 텍스트 초기화 */
+b,
+strong,
+em,
+i {
+  font-weight: inherit;
+  font-style: inherit;
+}
+
+/* 제목 초기화 (크기 차이 제거) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* 기타 요소 */
+abbr,
+acronym {
+  border: 0;
+  font-variant: normal;
+}
+
+sup,
+sub {
+  vertical-align: baseline;
+  position: relative;
+  top: 0;
+}
+
+hr {
+  border: 0;
+  height: 0;
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* 미디어 요소 */
+audio,
+canvas,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+/* 숨김 요소 */
+[hidden] {
+  display: none;
+}

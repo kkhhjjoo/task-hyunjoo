@@ -22,6 +22,7 @@ export default function TodoDetailPage() {
   const [todo, setTodo] = useState<Todo | null>(null);
   const [title, setTitle] = useState('');
   const [memo, setMemo] = useState('');
+  const [isCompleted, setIsCompleted] = useState(false);
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [savedImageUrl, setSavedImageUrl] = useState<string | null>(null);
   const [imageFile, setImageFile] = useState<File | null>(null);
@@ -38,6 +39,7 @@ export default function TodoDetailPage() {
         setTodo(data);
         setTitle(data.title);
         setMemo(data.memo ?? '');
+        setIsCompleted(data.isCompleted);
         setSavedImageUrl(data.imageUrl ?? null);
       } catch (err) {
         console.error(err);
@@ -104,7 +106,12 @@ export default function TodoDetailPage() {
       const res = await fetch(`/api/todos/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ title, memo, imageUrl: uploadedImageUrl }),
+        body: JSON.stringify({
+          title: title.trim(),
+          memo: memo.trim(),
+          imageUrl: uploadedImageUrl,
+          isCompleted,
+        }),
       });
 
       if (!res.ok) throw new Error('수정 실패');
@@ -115,6 +122,10 @@ export default function TodoDetailPage() {
     } finally {
       setSaving(false);
     }
+  };
+
+  const handleToggleComplete = () => {
+    setIsCompleted((prev) => !prev);
   };
 
   const handleDelete = async () => {
@@ -156,9 +167,18 @@ export default function TodoDetailPage() {
       <Header />
       <div className={styles.inner}>
         <div className={styles.titleRow}>
-          <button type="button" className={styles.circle} aria-hidden tabIndex={-1}>
+          <button
+            type="button"
+            className={styles.circle}
+            onClick={handleToggleComplete}
+            aria-label={isCompleted ? '완료 취소' : '완료'}
+          >
             <Image
-              src="/icons/Property 1=Default.svg"
+              src={
+                isCompleted
+                  ? '/icons/Property 1=Frame 2610233.svg'
+                  : '/icons/Property 1=Default.svg'
+              }
               alt=""
               width={24}
               height={24}
@@ -169,7 +189,8 @@ export default function TodoDetailPage() {
             className={styles.titleInput}
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            placeholder="할 일 제목"
+            onClick={(e) => e.stopPropagation()}
+            placeholder="할 일 제목을 입력하세요"
             aria-label="할 일 제목"
           />
         </div>

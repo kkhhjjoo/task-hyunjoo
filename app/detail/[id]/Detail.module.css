@@ -32,9 +32,9 @@
 
 .titleRow {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 12px;
+  width: 100%;
   padding: 14px 18px;
   margin-bottom: 24px;
   background: #fff;
@@ -42,17 +42,26 @@
   border-radius: 999px;
 }
 
+.titleRow:focus-within {
+  border-color: var(--slate-400);
+}
+
 .circle {
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 24px;
   height: 24px;
   padding: 0;
   background: none;
   border: none;
-  cursor: default;
+  cursor: pointer;
 }
 
 .titleInput {
+  flex: 1;
+  width: 100%;
   min-width: 0;
   border: none;
   outline: none;
@@ -61,6 +70,11 @@
   font-size: 15px;
   font-weight: 400;
   color: var(--slate-900);
+  cursor: text;
+}
+
+.titleInput::placeholder {
+  color: var(--slate-400);
 }
 
 .content {
@@ -186,6 +200,7 @@
 }
 
 .memoInput {
+  display: block;
   width: 100%;
   min-height: 240px;
   padding: 16px 32px 32px;
@@ -199,6 +214,11 @@
   line-height: 32px;
   color: var(--slate-800);
   text-align: center;
+  cursor: text;
+}
+
+.memoBox:focus-within .memoInput {
+  outline: none;
 }
 
 .memoInput::placeholder {
